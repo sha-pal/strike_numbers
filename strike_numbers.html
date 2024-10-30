@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strike Through Numbers</title>
+    <style>
+        .number {
+            display: inline-block;
+            margin: 5px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .struck {
+            text-decoration: line-through;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Strike Through Numbers</h1>
+    <div id="numbers"></div>
+
+    <script>
+        const numbersContainer = document.getElementById('numbers');
+        
+        for (let i = 1; i <= 41; i++) {
+            const numberDiv = document.createElement('div');
+            numberDiv.textContent = i;
+            numberDiv.className = 'number';
+            numberDiv.onclick = function() {
+                this.classList.toggle('struck');
+            };
+            numbersContainer.appendChild(numberDiv);
+        }
+    </script>
+</body>
+</html>
